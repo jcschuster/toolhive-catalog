@@ -1,0 +1,66 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.stacklok/atp-mcp",
+  "description": "Theorem provers for agents: SystemOnTPTP, StarExec, Isabelle and local ATPs, with SZS verdicts.",
+  "title": "AtpMcp",
+  "repository": {
+    "url": "https://github.com/jcschuster/AtpMcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "oci",
+      "identifier": "ghcr.io/jcschuster/atp_mcp:0.8.1",
+      "transport": { "type": "stdio" }
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/stacklok/toolhive-registry/main/registries/toolhive/servers/atp-mcp/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "io.github.stacklok": {
+        "ghcr.io/jcschuster/atp_mcp:0.8.1": {
+          "tier": "Community",
+          "status": "Active",
+          "tags": [
+            "theorem-proving",
+            "logic",
+            "tptp",
+            "formal-verification",
+            "isabelle"
+          ],
+          "tools": [
+            "list_backends",
+            "describe_szs",
+            "verify_backend",
+            "query_backend",
+            "list_provers",
+            "run_prover",
+            "compare_provers",
+            "prove_isabelle",
+            "lint_problem"
+          ],
+          "overview": "## AtpMcp\n\nAtpMcp exposes automated theorem provers to AI agents. It runs TPTP problems on SystemOnTPTP (every prover hosted at tptp.org), StarExec, Isabelle/HOL and locally installed provers such as E, and reports every verdict in the SZS ontology. Agents can lint problems, compare provers on the same input and check their own formalisations.",
+          "permissions": {
+            "network": {
+              "outbound": {
+                "allow_host": ["tptp.org", ".tptp.org"],
+                "allow_port": [443]
+              }
+            }
+          },
+          "custom_metadata": {
+            "author": "Johannes Schuster",
+            "license": "MIT"
+          }
+        }
+      }
+    }
+  }
+}
